@@ -1,716 +1,1087 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="theme-color" content="#07111f">
-
-<title>PERSIAN GULF ($PG) — The Gold Standard of the Gulf</title>
-
-<meta name="description" content="Discover PERSIAN GULF ($PG), a Solana-based crypto project inspired by the identity and heritage of the Persian Gulf.">
-
-<style>
-:root {
-  --bg: #07111f;
-  --panel: #0c1a2a;
-  --gold: #d8b66e;
-  --white: #f5f2e9;
-  --muted: #a7b2c1;
-  --line: rgba(216,182,110,.22);
-}
-
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-html {
-  scroll-behavior: smooth;
-}
-
-body {
-  background: var(--bg);
-  color: var(--white);
-  font-family: Arial, Helvetica, sans-serif;
-  line-height: 1.7;
-}
-
-a {
-  color: inherit;
-  text-decoration: none;
-}
-
-.container {
-  width: min(1120px, 90%);
-  margin: auto;
-}
-
-/* NAVIGATION */
-
-header {
-  position: sticky;
-  top: 0;
-  z-index: 10;
-  background: rgba(7,17,31,.94);
-  backdrop-filter: blur(15px);
-  border-bottom: 1px solid var(--line);
-}
-
-.nav {
-  min-height: 76px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: 20px;
-}
-
-.logo {
-  font-size: 24px;
-  font-weight: 900;
-  letter-spacing: 5px;
-}
-
-.logo span {
-  color: var(--gold);
-}
-
-nav {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 20px;
-  font-size: 12px;
-  color: var(--muted);
-}
-
-nav a:hover {
-  color: var(--gold);
-}
-
-/* HERO */
-
-.hero {
-  min-height: 660px;
-  display: flex;
-  align-items: center;
-  overflow: hidden;
-  position: relative;
-  background:
-    radial-gradient(ellipse at 75% 45%, rgba(28,75,105,.34), transparent 48%),
-    radial-gradient(ellipse at 15% 85%, rgba(216,182,110,.09), transparent 40%),
-    var(--bg);
-}
-
-.hero-grid {
-  display: grid;
-  grid-template-columns: 1.1fr .9fr;
-  align-items: center;
-  gap: 30px;
-  padding-top: 75px;
-  padding-bottom: 75px;
-}
-
-.eyebrow {
-  color: var(--gold);
-  text-transform: uppercase;
-  letter-spacing: 4px;
-  font-size: 11px;
-  font-weight: bold;
-  margin-bottom: 24px;
-}
-
-h1 {
-  font-size: clamp(43px, 6vw, 76px);
-  line-height: 1.03;
-  letter-spacing: -2px;
-  margin-bottom: 25px;
-}
-
-h1 span {
-  color: var(--gold);
-}
-
-.hero-copy p {
-  max-width: 530px;
-  color: var(--muted);
-  font-size: 16px;
-  margin-bottom: 30px;
-}
-
-.buttons {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 12px;
-}
-
-.btn {
-  display: inline-block;
-  padding: 13px 20px;
-  border: 1px solid var(--gold);
-  font-size: 11px;
-  font-weight: bold;
-  letter-spacing: 1.5px;
-  transition: .25s;
-}
-
-.btn-primary {
-  background: var(--gold);
-  color: #101522;
-}
-
-.btn:hover {
-  transform: translateY(-3px);
-}
-
-.coin-stage {
-  min-height: 380px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  position: relative;
-}
-
-.coin-halo {
-  position: absolute;
-  width: min(350px, 85%);
-  aspect-ratio: 1;
-  border-radius: 50%;
-  background: radial-gradient(circle,
-    rgba(216,182,110,.17),
-    rgba(28,75,105,.10) 48%,
-    transparent 72%);
-  filter: blur(12px);
-}
-
-.coin-image {
-  width: min(330px, 85%);
-  max-height: 400px;
-  object-fit: contain;
-  position: relative;
-  filter: drop-shadow(0 25px 40px rgba(0,0,0,.45));
-  animation: reveal 1.2s ease-out both;
-}
-
-@keyframes reveal {
-  from {
-    opacity: 0;
-    transform: translateY(18px) scale(.96);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0) scale(1);
-  }
-}
-
-/* GENERAL SECTIONS */
-
-section {
-  padding: 90px 0;
-  border-top: 1px solid rgba(255,255,255,.055);
-}
-
-.label {
-  color: var(--gold);
-  font-size: 11px;
-  letter-spacing: 3px;
-  margin-bottom: 13px;
-}
-
-h2 {
-  font-size: clamp(30px, 5vw, 47px);
-  line-height: 1.2;
-  margin-bottom: 20px;
-}
-
-.intro {
-  max-width: 720px;
-  color: var(--muted);
-  margin-bottom: 36px;
-}
-
-.grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 18px;
-}
-
-.card {
-  padding: 27px;
-  border: 1px solid var(--line);
-  background: linear-gradient(145deg, #102137, #091522);
-}
-
-.card-number {
-  color: var(--gold);
-  font-size: 11px;
-  letter-spacing: 2px;
-  margin-bottom: 18px;
-}
-
-.card h3 {
-  font-size: 19px;
-  margin-bottom: 12px;
-}
-
-.card p {
-  color: var(--muted);
-  font-size: 14px;
-}
-
-/* TOKENOMICS */
-
-.token-box {
-  background: var(--panel);
-  border: 1px solid var(--line);
-  padding: 10px 28px;
-}
-
-.token-row {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: 20px;
-  padding: 18px 0;
-  border-bottom: 1px solid var(--line);
-  font-size: 14px;
-}
-
-.token-row:last-child {
-  border-bottom: none;
-}
-
-.token-row span:first-child {
-  color: var(--muted);
-}
-
-.token-row span:last-child {
-  font-weight: bold;
-  text-align: right;
-  overflow-wrap: anywhere;
-}
-
-.note {
-  color: var(--muted);
-  font-size: 12px;
-  margin-top: 20px;
-}
-
-/* ROADMAP */
-
-.roadmap {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 18px;
-}
-
-.roadmap .card {
-  border-left: 2px solid var(--gold);
-}
-
-/* COMMUNITY */
-
-.community {
-  text-align: center;
-  background:
-    radial-gradient(ellipse at center,
-    rgba(216,182,110,.10),
-    transparent 65%);
-}
-
-.community .intro {
-  margin-left: auto;
-  margin-right: auto;
-}
-
-.center {
-  justify-content: center;
-}
-
-/* FOOTER */
-
-footer {
-  padding: 30px 0;
-  border-top: 1px solid var(--line);
-  color: var(--muted);
-  font-size: 12px;
-}
-
-.footer-inner {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  flex-wrap: wrap;
-  gap: 20px;
-}
-
-footer strong {
-  color: var(--gold);
-}
-
-/* MOBILE */
-
-@media (max-width: 760px) {
-  .nav {
-    flex-direction: column;
-    align-items: flex-start;
-    justify-content: center;
-    padding: 17px 0;
-  }
-
-  nav {
-    gap: 13px;
-  }
-
-  .hero-grid {
-    grid-template-columns: 1fr;
-    text-align: center;
-    gap: 0;
-    padding-top: 65px;
-    padding-bottom: 55px;
-  }
-
-  .hero-copy p {
-    margin-left: auto;
-    margin-right: auto;
-  }
-
-  .buttons {
-    justify-content: center;
-  }
-
-  .coin-stage {
-    min-height: 300px;
-    grid-row: 1;
-  }
-
-  .coin-image {
-    width: min(270px, 75%);
-    max-height: 310px;
-  }
-
-  .hero-copy {
-    grid-row: 2;
-  }
-
-  .grid,
-  .roadmap {
-    grid-template-columns: 1fr;
-  }
-
-  section {
-    padding: 65px 0;
-  }
-
-  .token-box {
-    padding: 8px 16px;
-  }
-
-  .token-row {
-    font-size: 12px;
-    gap: 12px;
-  }
-
-  .footer-inner {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  html {
-    scroll-behavior: auto;
-  }
-
-  .coin-image {
-    animation: none;
-  }
-}
-</style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>PERSIAN GULF ($PG) | The Gold Standard of the Gulf</title>
+
+  <meta
+    name="description"
+    content="Discover PERSIAN GULF ($PG), a community-oriented digital token on Solana. The Gold Standard of the Gulf."
+  >
+
+  <meta name="theme-color" content="#07111f">
+
+  <meta property="og:title" content="PERSIAN GULF ($PG)">
+  <meta
+    property="og:description"
+    content="THE GOLD STANDARD OF THE GULF"
+  >
+  <meta property="og:type" content="website">
+
+  <style>
+    :root {
+      --bg: #07111f;
+      --bg-soft: #0b1929;
+      --panel: #102238;
+      --gold: #d8b56b;
+      --gold-light: #f4dfaa;
+      --text: #f7f4ec;
+      --muted: #aab6c5;
+      --border: rgba(216, 181, 107, 0.22);
+      --max-width: 1160px;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: 85px;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background:
+        radial-gradient(
+          ellipse at 50% 0%,
+          rgba(25, 59, 87, 0.45),
+          transparent 55%
+        ),
+        var(--bg);
+      color: var(--text);
+      line-height: 1.7;
+      overflow-x: hidden;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    button,
+    a {
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    .container {
+      width: min(var(--max-width), 90%);
+      margin: 0 auto;
+    }
+
+    .gold {
+      color: var(--gold-light);
+    }
+
+    .eyebrow {
+      color: var(--gold);
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+    }
+
+    .section {
+      padding: 100px 0;
+    }
+
+    .section-heading {
+      max-width: 700px;
+      margin: 0 auto 48px;
+      text-align: center;
+    }
+
+    .section-heading h2 {
+      font-size: clamp(2rem, 5vw, 3.2rem);
+      line-height: 1.15;
+      margin: 15px 0;
+      letter-spacing: -0.04em;
+    }
+
+    .section-heading p {
+      color: var(--muted);
+      font-size: 1rem;
+    }
+
+    /* NAVIGATION */
+
+    .header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(7, 17, 31, 0.92);
+      backdrop-filter: blur(16px);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .nav {
+      min-height: 76px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-weight: 800;
+      letter-spacing: 0.08em;
+      font-size: 0.95rem;
+    }
+
+    .brand-mark {
+      width: 38px;
+      height: 38px;
+      display: grid;
+      place-items: center;
+      border: 1px solid var(--gold);
+      border-radius: 50%;
+      color: var(--gold-light);
+      font-size: 0.78rem;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 25px;
+      font-size: 0.85rem;
+      color: var(--muted);
+    }
+
+    .nav-links a:hover {
+      color: var(--gold-light);
+    }
+
+    .nav-cta {
+      padding: 9px 15px;
+      border: 1px solid var(--gold);
+      border-radius: 4px;
+      color: var(--gold-light);
+    }
+
+    /* BUTTONS */
+
+    .buttons {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 14px;
+      margin-top: 30px;
+    }
+
+    .btn {
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 48px;
+      padding: 12px 22px;
+      border-radius: 4px;
+      font-size: 0.9rem;
+      font-weight: 700;
+      transition: transform 0.2s, background 0.2s;
+    }
+
+    .btn:hover {
+      transform: translateY(-2px);
+    }
+
+    .btn-primary {
+      color: #101521;
+      background: linear-gradient(
+        135deg,
+        var(--gold-light),
+        var(--gold)
+      );
+    }
+
+    .btn-secondary {
+      border: 1px solid var(--border);
+      color: var(--text);
+      background: rgba(255, 255, 255, 0.02);
+    }
+
+    /* HERO */
+
+    .hero {
+      min-height: 690px;
+      display: flex;
+      align-items: center;
+      padding: 85px 0 95px;
+      position: relative;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.05fr 0.95fr;
+      align-items: center;
+      gap: 50px;
+    }
+
+    .hero-copy h1 {
+      margin: 20px 0;
+      font-size: clamp(3rem, 7vw, 5.6rem);
+      line-height: 0.99;
+      letter-spacing: -0.065em;
+    }
+
+    .hero-copy h1 span {
+      display: block;
+      color: var(--gold-light);
+    }
+
+    .hero-copy .lead {
+      max-width: 540px;
+      color: var(--muted);
+      font-size: 1.08rem;
+    }
+
+    .hero-copy .buttons {
+      justify-content: flex-start;
+    }
+
+    .hero-visual {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-width: 0;
+    }
+
+    .coin-frame {
+      position: relative;
+      width: min(100%, 450px);
+      aspect-ratio: 1;
+      display: grid;
+      place-items: center;
+      border: 1px solid rgba(216, 181, 107, 0.16);
+      border-radius: 50%;
+      background: radial-gradient(
+        circle,
+        rgba(216, 181, 107, 0.09),
+        rgba(11, 25, 41, 0.15) 52%,
+        transparent 72%
+      );
+    }
+
+    .coin-frame::before,
+    .coin-frame::after {
+      content: "";
+      position: absolute;
+      border: 1px solid rgba(216, 181, 107, 0.12);
+      border-radius: 50%;
+      pointer-events: none;
+    }
+
+    .coin-frame::before {
+      inset: 7%;
+    }
+
+    .coin-frame::after {
+      inset: -7%;
+      border-style: dashed;
+      opacity: 0.5;
+    }
+
+    .coin-image {
+      display: block;
+      width: 77%;
+      height: 77%;
+      object-fit: contain;
+      position: relative;
+      z-index: 2;
+      filter: drop-shadow(0 25px 45px rgba(0, 0, 0, 0.4));
+    }
+
+    .coin-fallback {
+      width: 77%;
+      aspect-ratio: 1;
+      border-radius: 50%;
+      border: 7px double var(--gold);
+      display: none;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      text-align: center;
+      color: var(--gold-light);
+      background: radial-gradient(
+        circle,
+        #25354a,
+        #0a1422 72%
+      );
+      box-shadow:
+        0 0 0 8px rgba(216, 181, 107, 0.08),
+        0 25px 60px rgba(0, 0, 0, 0.45);
+      position: relative;
+      z-index: 2;
+    }
+
+    .coin-fallback strong {
+      font-family: Georgia, serif;
+      font-size: clamp(2.8rem, 7vw, 4.5rem);
+      line-height: 1.1;
+    }
+
+    .coin-fallback span {
+      margin-top: 12px;
+      font-size: 0.65rem;
+      letter-spacing: 0.12em;
+    }
+
+    .hero-caption {
+      margin-top: 25px;
+      text-align: center;
+      color: var(--muted);
+      font-size: 0.75rem;
+      letter-spacing: 0.14em;
+    }
+
+    /* DIVIDER */
+
+    .divider {
+      border: 0;
+      border-top: 1px solid var(--border);
+    }
+
+    /* ABOUT */
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+
+    .card {
+      padding: 30px;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      background: linear-gradient(
+        145deg,
+        rgba(16, 34, 56, 0.88),
+        rgba(9, 22, 37, 0.75)
+      );
+    }
+
+    .card-number {
+      color: var(--gold);
+      font-size: 0.8rem;
+      letter-spacing: 0.15em;
+    }
+
+    .card h3 {
+      margin: 13px 0;
+      font-size: 1.2rem;
+    }
+
+    .card p {
+      color: var(--muted);
+      font-size: 0.92rem;
+    }
+
+    /* TOKENOMICS */
+
+    .tokenomics {
+      background: linear-gradient(
+        180deg,
+        transparent,
+        rgba(16, 34, 56, 0.35),
+        transparent
+      );
+    }
+
+    .token-panel {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 35px;
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      background: rgba(11, 25, 41, 0.78);
+    }
+
+    .token-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 18px;
+    }
+
+    .token-item {
+      padding: 24px;
+      border: 1px solid rgba(216, 181, 107, 0.13);
+      border-radius: 6px;
+      background: rgba(255, 255, 255, 0.018);
+    }
+
+    .token-label {
+      color: var(--muted);
+      font-size: 0.82rem;
+    }
+
+    .token-value {
+      display: block;
+      margin-top: 7px;
+      color: var(--gold-light);
+      font-size: clamp(1.3rem, 3vw, 2rem);
+      font-weight: 800;
+      overflow-wrap: anywhere;
+    }
+
+    .token-note {
+      margin-top: 22px;
+      color: var(--muted);
+      font-size: 0.83rem;
+    }
+
+    /* ROADMAP */
+
+    .roadmap {
+      max-width: 800px;
+      margin: 0 auto;
+      display: grid;
+      gap: 18px;
+    }
+
+    .roadmap-item {
+      display: grid;
+      grid-template-columns: 58px 1fr;
+      gap: 20px;
+      padding: 25px;
+      border: 1px solid var(--border);
+      border-radius: 7px;
+      background: rgba(16, 34, 56, 0.45);
+    }
+
+    .roadmap-number {
+      width: 48px;
+      height: 48px;
+      display: grid;
+      place-items: center;
+      border: 1px solid var(--gold);
+      border-radius: 50%;
+      color: var(--gold-light);
+      font-weight: 700;
+    }
+
+    .roadmap-item h3 {
+      margin-bottom: 6px;
+    }
+
+    .roadmap-item p {
+      color: var(--muted);
+      font-size: 0.92rem;
+    }
+
+    /* COMMUNITY */
+
+    .community-box {
+      padding: 55px 30px;
+      text-align: center;
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      background:
+        radial-gradient(
+          ellipse at top,
+          rgba(216, 181, 107, 0.1),
+          transparent 65%
+        ),
+        var(--bg-soft);
+    }
+
+    .community-box h2 {
+      margin: 15px 0;
+      font-size: clamp(2rem, 5vw, 3.2rem);
+      line-height: 1.15;
+    }
+
+    .community-box p {
+      max-width: 600px;
+      margin: 0 auto;
+      color: var(--muted);
+    }
+
+    /* FOOTER */
+
+    .footer {
+      padding: 30px 0;
+      border-top: 1px solid var(--border);
+    }
+
+    .footer-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 18px;
+      color: var(--muted);
+      font-size: 0.8rem;
+    }
+
+    .footer-brand {
+      color: var(--gold-light);
+      font-weight: 800;
+      letter-spacing: 0.08em;
+    }
+
+    .disclaimer {
+      max-width: 760px;
+      margin: 20px auto 0;
+      text-align: center;
+      color: #8593a4;
+      font-size: 0.75rem;
+    }
+
+    /* MOBILE */
+
+    @media (max-width: 850px) {
+      .nav {
+        min-height: 68px;
+      }
+
+      .nav-links {
+        gap: 13px;
+        font-size: 0.78rem;
+      }
+
+      .hero {
+        min-height: auto;
+        padding: 75px 0;
+      }
+
+      .hero-grid {
+        grid-template-columns: 1fr;
+        gap: 55px;
+      }
+
+      .hero-copy {
+        text-align: center;
+      }
+
+      .hero-copy .lead {
+        margin: 0 auto;
+      }
+
+      .hero-copy .buttons {
+        justify-content: center;
+      }
+
+      .hero-visual {
+        max-width: 460px;
+        margin: 0 auto;
+        width: 100%;
+      }
+
+      .about-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .section {
+        padding: 75px 0;
+      }
+    }
+
+    @media (max-width: 520px) {
+      .container {
+        width: 90%;
+      }
+
+      .brand {
+        gap: 8px;
+        font-size: 0.75rem;
+      }
+
+      .brand-mark {
+        width: 33px;
+        height: 33px;
+      }
+
+      .nav-links {
+        gap: 12px;
+      }
+
+      .nav-links a:nth-child(2),
+      .nav-links a:nth-child(3) {
+        display: none;
+      }
+
+      .nav-cta {
+        padding: 7px 10px;
+      }
+
+      .hero-copy h1 {
+        font-size: clamp(2.8rem, 13vw, 4rem);
+      }
+
+      .hero-copy .lead {
+        font-size: 0.98rem;
+      }
+
+      .coin-frame {
+        width: 85%;
+      }
+
+      .token-panel {
+        padding: 18px;
+      }
+
+      .token-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .roadmap-item {
+        grid-template-columns: 42px 1fr;
+        gap: 13px;
+        padding: 18px;
+      }
+
+      .roadmap-number {
+        width: 38px;
+        height: 38px;
+      }
+
+      .community-box {
+        padding: 40px 20px;
+      }
+
+      .footer-inner {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      .btn {
+        padding: 12px 17px;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html {
+        scroll-behavior: auto;
+      }
+
+      *,
+      *::before,
+      *::after {
+        transition: none !important;
+      }
+    }
+  </style>
 </head>
 
 <body>
 
-<header>
-  <div class="container nav">
-    <a class="logo" href="#home">P<span>G</span></a>
+  <header class="header">
+    <div class="container nav">
 
-    <nav aria-label="Main navigation">
-      <a href="#about">About</a>
-      <a href="#tokenomics">Tokenomics</a>
-      <a href="#roadmap">Roadmap</a>
-      <a href="#community">Community</a>
-    </nav>
-  </div>
-</header>
+      <a class="brand" href="#home" aria-label="PERSIAN GULF home">
+        <span class="brand-mark">$PG</span>
+        <span>PERSIAN GULF</span>
+      </a>
 
-<main>
+      <nav class="nav-links" aria-label="Main navigation">
+        <a href="#about">About</a>
+        <a href="#tokenomics">Tokenomics</a>
+        <a href="#roadmap">Roadmap</a>
+        <a class="nav-cta" href="#community">Community</a>
+      </nav>
 
-<!-- HERO -->
+    </div>
+  </header>
 
-<section class="hero" id="home">
-  <div class="container hero-grid">
 
-    <div class="hero-copy">
-      <div class="eyebrow">PERSIAN GULF · SOLANA</div>
+  <main>
 
-      <h1>
-        THE GOLD<br>
-        STANDARD<br>
-        OF THE <span>GULF.</span>
-      </h1>
+    <!-- HERO -->
 
-      <p>
-        Inspired by the identity, heritage and enduring spirit
-        of the Persian Gulf. Discover PERSIAN GULF ($PG),
-        a crypto project built on the Solana blockchain.
+    <section class="hero" id="home">
+      <div class="container hero-grid">
+
+        <div class="hero-copy">
+
+          <div class="eyebrow">Built on Solana</div>
+
+          <h1>
+            PERSIAN
+            <span>GULF.</span>
+          </h1>
+
+          <p class="lead">
+            A community-oriented digital token inspired by the identity,
+            spirit, and timeless character of the Persian Gulf.
+          </p>
+
+          <div class="buttons">
+            <a class="btn btn-primary" href="#about">
+              EXPLORE THE PROJECT
+            </a>
+
+            <a class="btn btn-secondary" href="#tokenomics">
+              TOKENOMICS
+            </a>
+          </div>
+
+          <p class="hero-caption">
+            THE GOLD STANDARD OF THE GULF
+          </p>
+
+        </div>
+
+
+        <div class="hero-visual">
+          <div class="coin-frame">
+
+            <img
+              class="coin-image"
+              id="officialCoin"
+              src="./pg-coin.png"
+              alt="Official PERSIAN GULF gold coin"
+              onerror="showCoinFallback()"
+            >
+
+            <div class="coin-fallback" id="coinFallback">
+              <strong>$PG</strong>
+              <span>PERSIAN GULF</span>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+
+    <hr class="divider">
+
+
+    <!-- ABOUT -->
+
+    <section class="section" id="about">
+      <div class="container">
+
+        <div class="section-heading">
+          <div class="eyebrow">The Vision</div>
+
+          <h2>
+            More Than a <span class="gold">Ticker.</span>
+          </h2>
+
+          <p>
+            PERSIAN GULF brings a distinctive identity and a community-first
+            spirit to the Solana ecosystem.
+          </p>
+        </div>
+
+
+        <div class="about-grid">
+
+          <article class="card">
+            <div class="card-number">01 / IDENTITY</div>
+            <h3>A Distinctive Identity</h3>
+            <p>
+              A recognizable visual identity inspired by the Persian Gulf,
+              represented by the project's official gold coin.
+            </p>
+          </article>
+
+          <article class="card">
+            <div class="card-number">02 / ECOSYSTEM</div>
+            <h3>Built on Solana</h3>
+            <p>
+              $PG is designed for the Solana blockchain ecosystem.
+              Always verify token details through official sources.
+            </p>
+          </article>
+
+          <article class="card">
+            <div class="card-number">03 / COMMUNITY</div>
+            <h3>Community-Oriented</h3>
+            <p>
+              The project's long-term direction depends on transparent
+              communication, responsible development, and community
+              participation.
+            </p>
+          </article>
+
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- TOKENOMICS -->
+
+    <section class="section tokenomics" id="tokenomics">
+      <div class="container">
+
+        <div class="section-heading">
+          <div class="eyebrow">Token Information</div>
+
+          <h2>
+            The <span class="gold">Tokenomics.</span>
+          </h2>
+
+          <p>
+            A straightforward overview of the project's stated supply
+            and allocation model.
+          </p>
+        </div>
+
+
+        <div class="token-panel">
+
+          <div class="token-grid">
+
+            <div class="token-item">
+              <span class="token-label">PROJECT NAME</span>
+              <strong class="token-value">PERSIAN GULF</strong>
+            </div>
+
+            <div class="token-item">
+              <span class="token-label">TOKEN TICKER</span>
+              <strong class="token-value">$PG</strong>
+            </div>
+
+            <div class="token-item">
+              <span class="token-label">BLOCKCHAIN</span>
+              <strong class="token-value">SOLANA</strong>
+            </div>
+
+            <div class="token-item">
+              <span class="token-label">TOTAL SUPPLY</span>
+              <strong class="token-value">1,000,000,000 PG</strong>
+            </div>
+
+            <div class="token-item">
+              <span class="token-label">CREATOR'S SEPARATE TOKEN ALLOCATION</span>
+              <strong class="token-value">0%</strong>
+            </div>
+
+            <div class="token-item">
+              <span class="token-label">INTENDED DISTRIBUTION</span>
+              <strong class="token-value">100% PUBLIC</strong>
+            </div>
+
+          </div>
+
+          <p class="token-note">
+            The stated model provides for public distribution of the total
+            supply, with no separate creator token allocation. This does
+            not mean all tokens have already been sold or distributed.
+            Any trading-fee income depends on actual fees paid, if enabled
+            and eligible under the relevant platform rules and configuration.
+            Verify on-chain details before making any decision.
+          </p>
+
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- ROADMAP -->
+
+    <section class="section" id="roadmap">
+      <div class="container">
+
+        <div class="section-heading">
+          <div class="eyebrow">Project Direction</div>
+
+          <h2>
+            The <span class="gold">Roadmap.</span>
+          </h2>
+
+          <p>
+            A general development framework. These phases are not
+            guarantees, confirmed deadlines, or promises of future results.
+          </p>
+        </div>
+
+
+        <div class="roadmap">
+
+          <article class="roadmap-item">
+            <div class="roadmap-number">01</div>
+
+            <div>
+              <h3>Foundation & Identity</h3>
+              <p>
+                Establish consistent branding, publish core project
+                information, and maintain clear communication.
+              </p>
+            </div>
+          </article>
+
+
+          <article class="roadmap-item">
+            <div class="roadmap-number">02</div>
+
+            <div>
+              <h3>Community Development</h3>
+              <p>
+                Build community channels, share project updates, and
+                encourage informed participation.
+              </p>
+            </div>
+          </article>
+
+
+          <article class="roadmap-item">
+            <div class="roadmap-number">03</div>
+
+            <div>
+              <h3>Transparency & Information</h3>
+              <p>
+                Improve access to verified token information, official
+                resources, and project communications.
+              </p>
+            </div>
+          </article>
+
+
+          <article class="roadmap-item">
+            <div class="roadmap-number">04</div>
+
+            <div>
+              <h3>Long-Term Development</h3>
+              <p>
+                Evaluate future initiatives based on feasibility,
+                community needs, and available resources.
+              </p>
+            </div>
+          </article>
+
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- COMMUNITY -->
+
+    <section class="section" id="community">
+      <div class="container">
+
+        <div class="community-box">
+
+          <div class="eyebrow">Join the Conversation</div>
+
+          <h2>
+            The Future Is <span class="gold">Community.</span>
+          </h2>
+
+          <p>
+            Follow official project channels for announcements,
+            verified information, and community updates.
+          </p>
+
+          <div class="buttons">
+
+            <!-- Replace # with the verified official Telegram URL -->
+            <a
+              class="btn btn-primary"
+              href="#"
+              id="telegramLink"
+              target="_blank"
+              rel="noopener noreferrer"
+              hidden
+            >
+              JOIN TELEGRAM
+            </a>
+
+            <!-- Replace # with the verified official X URL -->
+            <a
+              class="btn btn-secondary"
+              href="#"
+              id="xLink"
+              target="_blank"
+              rel="noopener noreferrer"
+              hidden
+            >
+              FOLLOW ON X
+            </a>
+
+            <a class="btn btn-secondary" href="#home">
+              BACK TO TOP ↑
+            </a>
+
+          </div>
+
+          <p style="margin-top: 24px; font-size: 0.82rem;">
+            Official social links will appear here once verified.
+          </p>
+
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+
+  <!-- FOOTER -->
+
+  <footer class="footer">
+    <div class="container">
+
+      <div class="footer-inner">
+
+        <a class="footer-brand" href="#home">
+          PERSIAN GULF · $PG
+        </a>
+
+        <span>THE GOLD STANDARD OF THE GULF</span>
+
+        <span>Built on Solana</span>
+
+      </div>
+
+      <p class="disclaimer">
+        $PG is a digital token and may involve substantial risk.
+        Nothing on this website constitutes financial, investment,
+        legal, or tax advice. No profit, return, liquidity, or future
+        performance is guaranteed. Always conduct your own research
+        and verify official information before taking action.
       </p>
 
-      <div class="buttons">
-        <a class="btn btn-primary" href="#about">
-          DISCOVER $PG
-        </a>
-
-        <a class="btn" href="#tokenomics">
-          TOKEN INFORMATION
-        </a>
-      </div>
     </div>
+  </footer>
 
-    <div class="coin-stage">
-      <div class="coin-halo"></div>
 
-      <img
-        class="coin-image"
-        src="pg-coin.png"
-        alt="PERSIAN GULF official gold coin"
-        onerror="this.style.display='none';"
-      >
-    </div>
+  <script>
+    function showCoinFallback() {
+      const coinImage = document.getElementById("officialCoin");
+      const fallback = document.getElementById("coinFallback");
 
-  </div>
-</section>
+      coinImage.style.display = "none";
+      fallback.style.display = "flex";
+    }
 
-<!-- ABOUT -->
+    /*
+      Add verified official links here when available.
 
-<section id="about">
-  <div class="container">
+      Example:
+      const OFFICIAL_TELEGRAM = "https://t.me/YOUR_OFFICIAL_CHANNEL";
+      const OFFICIAL_X = "https://x.com/YOUR_OFFICIAL_ACCOUNT";
 
-    <div class="label">01 — THE PROJECT</div>
+      Do not publish placeholder URLs as official links.
+    */
 
-    <h2>Rooted in identity.<br>Built for the future.</h2>
+    const OFFICIAL_TELEGRAM = "";
+    const OFFICIAL_X = "";
 
-    <p class="intro">
-      PERSIAN GULF ($PG) brings a distinctive identity to the
-      Solana ecosystem. Inspired by the history, character and
-      significance of the Persian Gulf, the project aims to build
-      a recognizable community and a consistent digital identity.
-    </p>
+    function activateOfficialLink(elementId, url) {
+      if (!url || !url.startsWith("https://")) {
+        return;
+      }
 
-    <div class="grid">
+      const element = document.getElementById(elementId);
+      element.href = url;
+      element.hidden = false;
+    }
 
-      <article class="card">
-        <div class="card-number">01 / IDENTITY</div>
-        <h3>A Distinct Identity</h3>
-        <p>
-          A project inspired by the enduring identity and heritage
-          of the Persian Gulf.
-        </p>
-      </article>
-
-      <article class="card">
-        <div class="card-number">02 / NETWORK</div>
-        <h3>Built on Solana</h3>
-        <p>
-          $PG is associated with the Solana blockchain ecosystem.
-          Verify the official token address before interacting.
-        </p>
-      </article>
-
-      <article class="card">
-        <div class="card-number">03 / COMMUNITY</div>
-        <h3>Community First</h3>
-        <p>
-          Building awareness, participation and a recognizable
-          community around the PERSIAN GULF identity.
-        </p>
-      </article>
-
-    </div>
-  </div>
-</section>
-
-<!-- TOKENOMICS -->
-
-<section id="tokenomics">
-  <div class="container">
-
-    <div class="label">02 — TOKENOMICS</div>
-
-    <h2>Token information.</h2>
-
-    <p class="intro">
-      Key supply information for PERSIAN GULF ($PG).
-      Token details should be verified against official
-      on-chain records.
-    </p>
-
-    <div class="token-box">
-
-      <div class="token-row">
-        <span>Project</span>
-        <span>PERSIAN GULF</span>
-      </div>
-
-      <div class="token-row">
-        <span>Token ticker</span>
-        <span>$PG</span>
-      </div>
-
-      <div class="token-row">
-        <span>Blockchain</span>
-        <span>Solana</span>
-      </div>
-
-      <div class="token-row">
-        <span>Total supply</span>
-        <span>1,000,000,000 PG</span>
-      </div>
-
-      <div class="token-row">
-        <span>Intended distribution</span>
-        <span>100% public distribution</span>
-      </div>
-
-      <div class="token-row">
-        <span>Creator token allocation</span>
-        <span>0% separate allocation</span>
-      </div>
-
-    </div>
-
-    <p class="note">
-      Public distribution describes the intended allocation model;
-      it does not mean all tokens have already been sold.
-      Trading-fee revenue, if any, depends on platform settings,
-      eligibility and actual fees received. No income is guaranteed.
-    </p>
-
-  </div>
-</section>
-
-<!-- ROADMAP -->
-
-<section id="roadmap">
-  <div class="container">
-
-    <div class="label">03 — THE ROAD AHEAD</div>
-
-    <h2>A vision in progress.</h2>
-
-    <p class="intro">
-      The project's future depends on execution, community
-      participation and transparent communication.
-    </p>
-
-    <div class="roadmap">
-
-      <article class="card">
-        <div class="card-number">PHASE 01</div>
-        <h3>Foundation</h3>
-        <p>
-          Establish the project identity, publish core information
-          and maintain consistent official communication.
-        </p>
-      </article>
-
-      <article class="card">
-        <div class="card-number">PHASE 02</div>
-        <h3>Community</h3>
-        <p>
-          Develop community channels and expand awareness of
-          the PERSIAN GULF project.
-        </p>
-      </article>
-
-      <article class="card">
-        <div class="card-number">PHASE 03</div>
-        <h3>Visibility</h3>
-        <p>
-          Explore responsible marketing, community initiatives
-          and opportunities to increase project visibility.
-        </p>
-      </article>
-
-      <article class="card">
-        <div class="card-number">PHASE 04</div>
-        <h3>Long-Term Development</h3>
-        <p>
-          Evaluate future initiatives based on project progress,
-          available resources and community needs.
-        </p>
-      </article>
-
-    </div>
-
-    <p class="note">
-      These phases describe a general vision, not confirmed
-      deadlines or guarantees. Specific milestones should be
-      announced only when officially confirmed.
-    </p>
-
-  </div>
-</section>
-
-<!-- COMMUNITY -->
-
-<section class="community" id="community">
-  <div class="container">
-
-    <div class="label">04 — JOIN THE JOURNEY</div>
-
-    <h2>The Gulf has a story.</h2>
-
-    <p class="intro">
-      Follow official PERSIAN GULF channels for verified
-      announcements, project updates and community news.
-    </p>
-
-    <div class="buttons center">
-      <a class="btn btn-primary" href="#home">
-        BACK TO TOP
-      </a>
-    </div>
-
-    <p class="note">
-      Official social and community links will be added
-      after they have been verified.
-    </p>
-
-  </div>
-</section>
-
-</main>
-
-<footer>
-  <div class="container footer-inner">
-
-    <div>
-      <strong>PERSIAN GULF ($PG)</strong><br>
-      THE GOLD STANDARD OF THE GULF
-    </div>
-
-    <div>
-      © <span id="year"></span> PERSIAN GULF.
-      All rights reserved.
-    </div>
-
-  </div>
-</footer>
-
-<script>
-document.getElementById("year").textContent =
-  new Date().getFullYear();
-</script>
+    activateOfficialLink("telegramLink", OFFICIAL_TELEGRAM);
+    activateOfficialLink("xLink", OFFICIAL_X);
+  </script>
 
 </body>
 </html>
